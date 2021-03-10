@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from 'react'
+import './App.css'
+import List from './components/List/List'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const [list, setList] = useState('')
+
+  console.log(list)
+
+  useEffect(() => {
+    const loadData = async () => {
+      try {
+        const response = await fetch(process.env.REACT_APP_URL_LIST)
+        console.log(response)
+        if (response.ok) {
+          const json = await response.json()
+          setList(json)
+        }
+      } catch (e) {
+        console.error(e)
+      }
+    }
+
+    loadData()
+  }, [])
+
+  return <div className="App">{list && <List list={list} />}</div>
 }
 
-export default App;
+export default App
