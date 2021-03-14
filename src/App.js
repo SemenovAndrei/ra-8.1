@@ -1,30 +1,36 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import './App.css'
+import Details from './components/Details/Details'
 import List from './components/List/List'
+import ShowSpinner from './components/ShowSpinner/ShowSpinner'
+import useJsonFetch from './hooks/useJsonFetch'
 
 function App() {
-  const [list, setList] = useState('')
+  const [info, setInfo] = useState({
+    id: '',
+    name: '',
+  })
 
-  console.log(list)
+  const [loading, error, data] = useJsonFetch(
+    `${process.env.REACT_APP_URL_DATA}/users.json`
+  )
 
-  useEffect(() => {
-    const loadData = async () => {
-      try {
-        const response = await fetch(process.env.REACT_APP_URL_LIST)
-        console.log(response)
-        if (response.ok) {
-          const json = await response.json()
-          setList(json)
-        }
-      } catch (e) {
-        console.error(e)
-      }
+  const handleUserInfo = (el) => {
+    if (el.id === info.id) {
+      return
     }
 
-    loadData()
-  }, [])
+    setInfo({ id: el.id, name: el.dataset.name })
+  }
 
-  return <div className="App">{list && <List list={list} />}</div>
+  return (
+    <div className="App">
+      {loading && <ShowSpinner />}
+      {error && error.message}
+      {data && <List list={data} onClick={handleUserInfo} />}
+      {info.id && <Details info={info} />}
+    </div>
+  )
 }
 
 export default App

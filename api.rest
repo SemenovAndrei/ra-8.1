@@ -1,0 +1,25 @@
+@url = https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/hooks-context/use-effect/data
+
+###
+
+GET {{url}}/users.json
+
+###
+
+GET {{url}}/1.json
+
+
+###
+
+GET {{url}}/loading
+
+###
+
+POST {{url}}/tickets?method=createTicket
+Content-Type: application/json
+
+{ "name": "сделать прототип API", "description": "123" }
+
+###
+
+DELETE {{url}}/tickets/2
