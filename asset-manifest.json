@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/ra-8.1/static/css/main.ed06f88b.chunk.css",
+    "main.js": "/ra-8.1/static/js/main.db5f0fad.chunk.js",
+    "main.js.map": "/ra-8.1/static/js/main.db5f0fad.chunk.js.map",
+    "runtime-main.js": "/ra-8.1/static/js/runtime-main.ee8af0c6.js",
+    "runtime-main.js.map": "/ra-8.1/static/js/runtime-main.ee8af0c6.js.map",
+    "static/js/2.ae8c9c2b.chunk.js": "/ra-8.1/static/js/2.ae8c9c2b.chunk.js",
+    "static/js/2.ae8c9c2b.chunk.js.map": "/ra-8.1/static/js/2.ae8c9c2b.chunk.js.map",
+    "static/js/3.18d9a59d.chunk.js": "/ra-8.1/static/js/3.18d9a59d.chunk.js",
+    "static/js/3.18d9a59d.chunk.js.map": "/ra-8.1/static/js/3.18d9a59d.chunk.js.map",
+    "index.html": "/ra-8.1/index.html",
+    "static/css/main.ed06f88b.chunk.css.map": "/ra-8.1/static/css/main.ed06f88b.chunk.css.map",
+    "static/js/2.ae8c9c2b.chunk.js.LICENSE.txt": "/ra-8.1/static/js/2.ae8c9c2b.chunk.js.LICENSE.txt",
+    "static/media/Loading_icon.1a32f552.gif": "/ra-8.1/static/media/Loading_icon.1a32f552.gif"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ee8af0c6.js",
+    "static/js/2.ae8c9c2b.chunk.js",
+    "static/css/main.ed06f88b.chunk.css",
+    "static/js/main.db5f0fad.chunk.js"
+  ]
+}
